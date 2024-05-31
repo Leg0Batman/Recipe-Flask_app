@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>Home</title>
+{% endblock %}
+
+{% block body %}
+  <div>
+      <div class="bg-body-tertiaryp-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>Welcome to CookBook Craze</h1>
+          <p>Discover the joy of cooking, one recipe at a time. Whether you're a seasoned chef or just starting your culinary journey, you've found your online haven for all things delicious.</p>
+          <p>Start your culinary exploration now, and let the Cookbook Craze community inspire your next gastronomic masterpiece. Welcome to a world where every meal is a masterpiece waiting to be created.</p>
+          <h3>We have {{ num_recipes }} recipes!</h3>
+          <p>
+           <a class="btn btn-primary" href="/recipes/" role="button">Go to recipes &raquo;</a>
+          </p>
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block head%}
+	<title>Recipes</title>
+{% endblock %}
+
+{% block body %}
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: pink;
+        }
+    </style>
+	<h1>All recipes</h1>
+  <a href="/recipes/new/" class="btn btn-success float-right">New recipe</a>
+  <hr>
+
+	{% for recipe in recipes %}
+    {% if recipe.author %}
+			<small>Written by {{recipe.author}} on {{ recipe.date_posted }}</small>
+		{% else %}
+			<small>Written by unknown on {{ recipe.date_posted }}</small>
+		{% endif %}
+		<h2>{{ recipe.title }}</h2>
+		<p style="white-space: pre-wrap">{{ recipe.description }}</p>
+    <a href='/recipes/delete/{{ recipe.id }}' class="btn btn-danger">Delete</a>
+    <a href='/recipes/edit/{{ recipe.id }}' class="btn btn-primary">Edit</a><br><br>
+{% endfor %}
+{% endblock %}
